@@ -1,4 +1,4 @@
-local workingKeys = {
+_G.Keys = {
 	devKeys = {
 		"SlaxxF-Best-Exploiter",
 		"iamtotallydev69",
