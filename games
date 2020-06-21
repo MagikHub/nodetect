@@ -6,3 +6,4 @@ _G.Games = {
 	["Lumber Tycoon 2"] = 13822889,
 	["Sword Fight On The Heights 4"] = 47324,
 }
+_G.Discord = "https://discord.gg/DepEFcW"
