@@ -1,9 +1,9 @@
 _G.Games = {
-	['Car Crushers 2'] = {654732683,4},
-	["Piggy"] = {4623386862,4},
-	["Miners Haven"] = {258258996,4},
-	["Saber Simulator"] = {3823781113,4},
-	["Lumber Tycoon 2"] = {2471084,4},
-	["Sword Fight On The Heights 4"] = {47324,4},
+	['Car Crushers 2'] = {'Car Crushers 2',654732683,4},
+	["Piggy"] = {"Piggy",4623386862,4},
+	["Miners Haven"] = {"Miners Haven",258258996,4},
+	["Saber Simulator"] = {"Saber Simulator",3823781113,4},
+	["Lumber Tycoon 2"] = {"Lumber Tycoon 2",2471084,4},
+	["Sword Fight On The Heights 4"] = {"SFOTH4",47324,4},
 }
 _G.Discord = "https://discord.gg/DepEFcW"
