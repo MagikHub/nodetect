@@ -5,5 +5,6 @@ _G.Games = {
 	["Saber Simulator"] = {"Saber Simulator",3823781113,4},
 	["Lumber Tycoon 2"] = {"Lumber Tycoon 2",2471084,4},
 	["Sword Fight On The Heights 4"] = {"SFOTH4",47324,4},
+	["Anime Fighting Simulator"] = {"Anime Fighting Sim",4042427666,3}
 }
 _G.Discord = "https://discord.gg/DepEFcW"
