@@ -1,8 +1,11 @@
 local worksgames = {
- Anime = 4042427666
+ Anime = {ID = 4042427666, name = "Anime"}
 ,
 };
-
-if game.PlaceId == worksgames.Anime then
- 
+function load(id)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MagikHub/f-u/master/"..id))()
 end
+for i,v in pairs(worksgames) do
+if game.PlaceId == v.ID then
+ load(v.name)
+end 
