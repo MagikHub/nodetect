@@ -8,6 +8,7 @@ _G.Keys = {
  		"This-Is-A-Real-Key!!!"
 	},
 	 paidKeys = {
-		"2rdce7f8pcvi-fzp4qkg2237-97rxogfaqdx"
+		"2rdce7f8pcvi-fzp4qkg2237-97rxogfaqdx",
+     		'9xfea7r5wdbk-gec4car5988-85zctydqpno'
 	}
 }
