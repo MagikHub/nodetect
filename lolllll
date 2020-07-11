@@ -10,3 +10,4 @@ for i,v in pairs(worksgames) do
 if game.PlaceId == v.ID then
  load(v.name)
 end 
+end
