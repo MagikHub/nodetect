@@ -1,5 +1,6 @@
 local worksgames = {
- Anime = {ID = 4042427666, name = "Anime"}
+ Anime = {ID = 4042427666, name = "Anime"},
+ LT2 = {ID = 13822889, name = "LT2"}
 ,
 };
 function load(id)
