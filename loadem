@@ -565,6 +565,703 @@ LoadText.TextXAlignment = Enum.TextXAlignment.Left
 function loads(link)
     loadstring(game:HttpGet(link))()
 end
+local Library = {}
+function Library:Category(name)
+	local Category = Instance.new("TextButton")
+	local CategoryList = Instance.new("ImageLabel")
+	local CategoryList_2 = Instance.new("ScrollingFrame")
+	local UIPadding_3 = Instance.new("UIPadding")
+	local UIListLayout_4 = Instance.new("UIListLayout")
+	Category.Name = "Category"
+	Category.Parent = game.CoreGui.MagikHub.Main.reorder.Open.scroll
+	Category.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+	Category.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Category.BorderSizePixel = 0
+	Category.Size = UDim2.new(1, 0, 0, 30)
+	Category.ZIndex = 9
+	Category.AutoButtonColor = false
+	Category.Font = Enum.Font.GothamBold
+	Category.Text = name
+	Category.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Category.TextSize = 16.000
+	Category.TextStrokeTransparency = 0.000
+	
+	CategoryList.Name = "Category List"
+	CategoryList.Parent = Category
+	CategoryList.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	CategoryList.BackgroundTransparency = 1.000
+	CategoryList.Position = UDim2.new(1.04999995, 0, 0, 0)
+	CategoryList.Image = "rbxassetid://3570695787"
+	CategoryList.ImageColor3 = Color3.fromRGB(34, 34, 34)
+	CategoryList.ScaleType = Enum.ScaleType.Slice
+	CategoryList.SliceCenter = Rect.new(100, 100, 100, 100)
+	CategoryList.SliceScale = 0.080
+
+	CategoryList_2.Name = "Category List"
+	CategoryList_2.Parent = CategoryList
+	CategoryList_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	CategoryList_2.BackgroundTransparency = 1.000
+	CategoryList_2.BorderSizePixel = 0
+	CategoryList_2.Selectable = false
+	CategoryList_2.Size = UDim2.new(1, 0, 1, 0)
+	CategoryList_2.ZIndex = 2
+	CategoryList_2.CanvasSize = UDim2.new(0, 0, 0, 2)
+	CategoryList_2.ScrollBarThickness = 0
+	
+	UIPadding_3.Parent = CategoryList_2
+	UIPadding_3.PaddingTop = UDim.new(0, 2)
+	
+	UIListLayout_4.Parent = CategoryList_2
+	UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout_4.Padding = UDim.new(0, 2)
+	local Win = {}
+	function Win:Section(text)
+		local Section = Instance.new("TextLabel")
+		local SectionRound = Instance.new("ImageLabel")
+		Section.Name = "Section"
+		Section.Parent = CategoryList_2
+		Section.Active = true
+		Section.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Section.BackgroundTransparency = 1.000
+		Section.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Section.BorderSizePixel = 0
+		Section.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Section.Selectable = true
+		Section.Size = UDim2.new(1, 0, 0, 25)
+		Section.ZIndex = 2
+		Section.Font = Enum.Font.GothamBold
+		Section.Text = "  "..text
+		Section.TextSize = 16.000
+		if string.len("  "..text) > 15 then
+		    Section.TextSize = 12
+		end
+		Section.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+		Section.TextWrapped = true
+		Section.TextXAlignment = Enum.TextXAlignment.Left
+		
+		SectionRound.Name = "SectionRound"
+		SectionRound.Parent = Section
+		SectionRound.Active = true
+		SectionRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		SectionRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		SectionRound.BackgroundTransparency = 1.000
+		SectionRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		SectionRound.Selectable = true
+		SectionRound.Size = UDim2.new(1, -6, 1, 0)
+		SectionRound.Image = "rbxassetid://3570695787"
+		SectionRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		SectionRound.ScaleType = Enum.ScaleType.Slice
+		SectionRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		SectionRound.SliceScale = 0.080
+		CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)
+	end
+	function Win:Button(text,clicktext,callback)
+		CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)
+		callback = callback or function() end
+		local Button = Instance.new("TextLabel")
+		local ButtonRound = Instance.new("ImageLabel")
+		local ButtonBGRound = Instance.new("ImageButton")
+		local ClickName = Instance.new("TextLabel")
+		local FillEffect = Instance.new("ImageButton")
+		Button.Name = "Button"
+		Button.Parent = CategoryList_2
+		Button.Active = true
+		Button.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Button.BackgroundTransparency = 1.000
+		Button.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Button.BorderSizePixel = 0
+		Button.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Button.Selectable = true
+		Button.Size = UDim2.new(1, 0, 0, 25)
+		Button.ZIndex = 2
+		Button.Font = Enum.Font.GothamBold
+		Button.Text = "  "..text
+		Button.TextSize = 16.000
+		if string.len("  "..text) > 15 then
+		    Button.TextSize = 12.000
+		end
+		Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Button.TextWrapped = true
+		Button.TextXAlignment = Enum.TextXAlignment.Left
+		
+		ButtonRound.Name = "ButtonRound"
+		ButtonRound.Parent = Button
+		ButtonRound.Active = true
+		ButtonRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		ButtonRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonRound.BackgroundTransparency = 1.000
+		ButtonRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		ButtonRound.Selectable = true
+		ButtonRound.Size = UDim2.new(1, -6, 1, 0)
+		ButtonRound.Image = "rbxassetid://3570695787"
+		ButtonRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		ButtonRound.ScaleType = Enum.ScaleType.Slice
+		ButtonRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		ButtonRound.SliceScale = 0.080
+		
+		ButtonBGRound.Name = "ButtonBGRound"
+		ButtonBGRound.Parent = Button
+		ButtonBGRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		ButtonBGRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonBGRound.BackgroundTransparency = 1.000
+		ButtonBGRound.Position = UDim2.new(0.807317078, 0, 0.5, 0)
+		ButtonBGRound.Size = UDim2.new(0.298000008, -6, 1, -4)
+		ButtonBGRound.ZIndex = 2
+		ButtonBGRound.Image = "rbxassetid://3570695787"
+		ButtonBGRound.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		ButtonBGRound.ScaleType = Enum.ScaleType.Slice
+		ButtonBGRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		ButtonBGRound.SliceScale = 0.080
+		
+		ClickName.Name = "ClickName"
+		ClickName.Parent = ButtonBGRound
+		ClickName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ClickName.BackgroundTransparency = 1.000
+		ClickName.Size = UDim2.new(1, 0, 1, 0)
+		ClickName.ZIndex = 3
+		ClickName.Font = Enum.Font.GothamBold
+		ClickName.Text = clicktext
+		ClickName.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ClickName.TextSize = 14.000
+		ClickName.TextWrapped = true
+		
+		FillEffect.Name = "FillEffect"
+		FillEffect.Parent = ButtonBGRound
+		FillEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+		FillEffect.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		FillEffect.BackgroundTransparency = 1.000
+		FillEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+		FillEffect.ZIndex = 2
+		FillEffect.Image = "rbxassetid://3570695787"
+		FillEffect.ImageColor3 = Color3.fromRGB(97, 255, 30)
+		FillEffect.ScaleType = Enum.ScaleType.Slice
+		FillEffect.SliceCenter = Rect.new(100, 100, 100, 100)
+		FillEffect.SliceScale = 0.080
+
+		function clicksound()
+			spawn(function()
+			local s = Instance.new("Sound",workspace)
+			s.SoundId = "rbxassetid://421058925"
+			s.Volume = 2.5
+			s.Playing = true
+			wait(0.5)
+				s:Destroy()
+			end)
+		end
+		ButtonBGRound.MouseButton1Click:Connect(function()
+			clicksound()
+			spawn(function() callback() end)
+			game:GetService("TweenService"):Create(FillEffect,TweenInfo.new(0.3),{Size = UDim2.new(1,0,1,0)}):Play()
+			wait(0.5)
+			game:GetService("TweenService"):Create(FillEffect,TweenInfo.new(0.3),{Size = UDim2.new(0,0,0,0)}):Play()
+		end)
+	end
+	function Win:Box(text,callsback)
+		callsback = callsback or function(txt) end
+		CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)		local Box = Instance.new("TextLabel")
+        local BoxRound = Instance.new("ImageLabel")
+        local BoxBGRound = Instance.new("ImageLabel")
+        local RealBox = Instance.new("TextBox")
+
+		Box.Name = "Box"
+		Box.Parent = CategoryList_2
+		Box.Active = true
+		Box.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Box.BackgroundTransparency = 1.000
+		Box.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Box.BorderSizePixel = 0
+		Box.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Box.Selectable = true
+		Box.Size = UDim2.new(1, 0, 0, 25)
+		Box.ZIndex = 2
+		Box.Font = Enum.Font.GothamBold
+		Box.TextSize = 16.000
+		Box.Text = "  "..text
+		if string.len("  "..text) > 15 then
+		    Box.TextSize = 12
+		end
+		Box.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Box.TextWrapped = true
+		Box.TextXAlignment = Enum.TextXAlignment.Left
+		
+		BoxRound.Name = "BoxRound"
+		BoxRound.Parent = Box
+		BoxRound.Active = true
+		BoxRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		BoxRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		BoxRound.BackgroundTransparency = 1.000
+		BoxRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		BoxRound.Selectable = true
+		BoxRound.Size = UDim2.new(1, -6, 1, 0)
+		BoxRound.Image = "rbxassetid://3570695787"
+		BoxRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		BoxRound.ScaleType = Enum.ScaleType.Slice
+		BoxRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		BoxRound.SliceScale = 0.080
+		
+		BoxBGRound.Name = "BoxBGRound"
+		BoxBGRound.Parent = Box
+		BoxBGRound.Active = true
+		BoxBGRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		BoxBGRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		BoxBGRound.BackgroundTransparency = 1.000
+		BoxBGRound.Position = UDim2.new(0.807317078, 0, 0.5, 0)
+		BoxBGRound.Selectable = true
+		BoxBGRound.Size = UDim2.new(0.298000008, -6, 1, -4)
+		BoxBGRound.ZIndex = 2
+		BoxBGRound.Image = "rbxassetid://3570695787"
+		BoxBGRound.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		BoxBGRound.ScaleType = Enum.ScaleType.Slice
+		BoxBGRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		BoxBGRound.SliceScale = 0.080
+		
+		RealBox.Name = "RealBox"
+		RealBox.Parent = BoxBGRound
+		RealBox.Active = false
+		RealBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		RealBox.BackgroundTransparency = 1.000
+		RealBox.Selectable = false
+		RealBox.Size = UDim2.new(1, 0, 1, 0)
+		RealBox.ZIndex = 3
+		RealBox.ClearTextOnFocus = false
+		RealBox.Font = Enum.Font.GothamBold
+		RealBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+		RealBox.Text = ""
+		RealBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		RealBox.TextScaled = true
+		RealBox.TextSize = 14.000
+		RealBox.TextWrapped = true
+
+		function pressSound()
+			spawn(function()
+			local s = Instance.new("Sound",workspace)
+			s.SoundId = "rbxassetid://5231386761"
+			s.Volume = 1.25
+			s.Playing = true
+			wait(0.5)
+				s:Destroy()
+			end)
+		end
+		RealBox.Focused:Connect(function()
+			game:GetService("TweenService"):Create(RealBox,TweenInfo.new(0.3),{TextColor3 = Color3.fromRGB(255,69,72)}):Play()
+		end)
+		RealBox.FocusLost:Connect(function()
+		    callsback(RealBox.Text)
+			game:GetService("TweenService"):Create(RealBox,TweenInfo.new(0.3),{TextColor3 = Color3.fromRGB(255,255,255)}):Play()
+			
+		end)
+		RealBox:GetPropertyChangedSignal("Text"):Connect(function()
+			pressSound()
+		end)
+	end
+	function Win:Toggle(text,callback)
+	    CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)		callback = callback or function() end
+		local Toggle = Instance.new("TextLabel")
+		local ToggleRound = Instance.new("ImageLabel")
+		local ToggleBGRound = Instance.new("ImageButton")
+		Toggle.Name = "Toggle"
+		Toggle.Parent = CategoryList_2
+		Toggle.Active = true
+		Toggle.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Toggle.BackgroundTransparency = 1.000
+		Toggle.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Toggle.BorderSizePixel = 0
+		Toggle.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Toggle.Selectable = true
+		Toggle.Size = UDim2.new(1, 0, 0, 25)
+		Toggle.ZIndex = 2
+		Toggle.Font = Enum.Font.GothamBold
+		Toggle.Text = "  "..text
+		Toggle.TextSize = 16.000
+		if string.len("  "..text) > 15 then
+		    Toggle.TextSize = 12
+		end
+		Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Toggle.TextWrapped = true
+		Toggle.TextXAlignment = Enum.TextXAlignment.Left
+		
+		ToggleRound.Name = "ToggleRound"
+		ToggleRound.Parent = Toggle
+		ToggleRound.Active = true
+		ToggleRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		ToggleRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleRound.BackgroundTransparency = 1.000
+		ToggleRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		ToggleRound.Selectable = true
+		ToggleRound.Size = UDim2.new(1, -6, 1, 0)
+		ToggleRound.Image = "rbxassetid://3570695787"
+		ToggleRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		ToggleRound.ScaleType = Enum.ScaleType.Slice
+		ToggleRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		ToggleRound.SliceScale = 0.080
+		
+		ToggleBGRound.Name = "ToggleBGRound"
+		ToggleBGRound.Parent = Toggle
+		ToggleBGRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		ToggleBGRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleBGRound.BackgroundTransparency = 1.000
+		ToggleBGRound.Position = UDim2.new(0.890243888, 0, 0.5, 0)
+		ToggleBGRound.Size = UDim2.new(0.132146433, -6, 1, -4)
+		ToggleBGRound.ZIndex = 2
+		ToggleBGRound.Image = "rbxassetid://3570695787"
+		ToggleBGRound.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		ToggleBGRound.ScaleType = Enum.ScaleType.Slice
+		ToggleBGRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		ToggleBGRound.SliceScale = 0.080
+
+		local e = false
+		function clicksound()
+			spawn(function()
+			local s = Instance.new("Sound",workspace)
+			s.SoundId = "rbxassetid://421058925"
+			s.Volume = 2.5
+			s.Playing = true
+			wait(0.5)
+				s:Destroy()
+			end)
+		end
+		ToggleBGRound.MouseButton1Click:Connect(function()
+			clicksound()
+			if e == false then e = true
+				game:GetService("TweenService"):Create(ToggleBGRound,TweenInfo.new(0.3),{ImageColor3 = Color3.fromRGB(97, 255, 30)}):Play()
+			else
+				e = false
+				game:GetService("TweenService"):Create(ToggleBGRound,TweenInfo.new(0.3),{ImageColor3 = Color3.fromRGB(36, 36, 36)}):Play()
+			end
+			callback(e)
+		end)
+	end
+	function Win:Slider(text,min,max,callback)
+	    CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)		callback = callback or function() end
+		callback = callback or function() end
+		local Slider = Instance.new("TextLabel")
+		local SliderRound = Instance.new("ImageLabel")
+		local SliderBGRound = Instance.new("ImageButton")
+		local Inner = Instance.new("ImageButton")
+		Slider.Name = "Slider"
+		Slider.Parent = CategoryList_2
+		Slider.Active = true
+		Slider.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Slider.BackgroundTransparency = 1.000
+		Slider.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Slider.BorderSizePixel = 0
+		
+		Slider.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Slider.Selectable = true
+		Slider.Size = UDim2.new(1, 0, 0, 25)
+		Slider.ZIndex = 2
+		Slider.Font = Enum.Font.GothamBold
+		Slider.Text = "  "..text
+		Slider.TextSize = 16.000
+		if string.len("  "..text) > 15 then
+		    Slider.TextSize = 12
+		end
+		Slider.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Slider.TextWrapped = true
+		Slider.TextXAlignment = Enum.TextXAlignment.Left
+		
+		SliderRound.Name = "SliderRound"
+		SliderRound.Parent = Slider
+		SliderRound.Active = true
+		SliderRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		SliderRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		SliderRound.BackgroundTransparency = 1.000
+		SliderRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		SliderRound.Selectable = true
+		SliderRound.Size = UDim2.new(1, -6, 1, 0)
+		SliderRound.Image = "rbxassetid://3570695787"
+		SliderRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		SliderRound.ScaleType = Enum.ScaleType.Slice
+		SliderRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		SliderRound.SliceScale = 0.080
+		
+		SliderBGRound.Name = "SliderBGRound"
+		SliderBGRound.Parent = Slider
+		SliderBGRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		SliderBGRound.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+		SliderBGRound.BorderSizePixel = 0
+		SliderBGRound.ClipsDescendants = true
+		SliderBGRound.Position = UDim2.new(0.807317078, 0, 0.5, 0)
+		SliderBGRound.Size = UDim2.new(0, 55, 0, 14)
+		SliderBGRound.ZIndex = 2
+		SliderBGRound.AutoButtonColor = false
+		SliderBGRound.Image = "rbxassetid://3570695787"
+		SliderBGRound.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		SliderBGRound.ScaleType = Enum.ScaleType.Slice
+		SliderBGRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		SliderBGRound.SliceScale = 0.080
+		
+		Inner.Name = "Inner"
+		Inner.Parent = SliderBGRound
+		Inner.Active = false
+		Inner.AnchorPoint = Vector2.new(0, 0.5)
+		Inner.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Inner.BackgroundTransparency = 1.000
+		Inner.Position = UDim2.new(0, 0, 0.5, 0)
+		Inner.Selectable = false
+		Inner.Size = UDim2.new(0, 0, 1, -4)
+		Inner.ZIndex = 2
+		Inner.AutoButtonColor = false
+		Inner.Image = "rbxassetid://3570695787"
+		Inner.ImageColor3 = Color3.fromRGB(255, 69, 72)
+		Inner.ScaleType = Enum.ScaleType.Slice
+		Inner.SliceCenter = Rect.new(100, 100, 100, 100)
+		Inner.SliceScale = 0.080
+
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		local maxvalue = max
+		local minvalue = min
+		local old = Slider.Text..": "
+		local uis = game:GetService("UserInputService")
+		local Value;
+		SliderBGRound.MouseButton1Down:Connect(function()
+		    Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 55) * Inner.AbsoluteSize.X) + tonumber(minvalue)) or 0
+		    pcall(function()
+		        callback(Value)
+		    end)
+		    Inner.Size = UDim2.new(0, math.clamp(mouse.X - Inner.AbsolutePosition.X, 0, 55), 0, 10)
+		    moveconnection = mouse.Move:Connect(function()
+				        
+		        Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 55) * Inner.AbsoluteSize.X) + tonumber(minvalue))
+		        pcall(function()
+		            callback(Value)
+				        end)
+				Slider.Text = old..Value
+		        Inner.Size = UDim2.new(0, math.clamp(mouse.X - Inner.AbsolutePosition.X, 0, 55), 0, 10)
+		    end)
+		    releaseconnection = uis.InputEnded:Connect(function(Mouse)
+		        if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+		            Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 55) * Inner.AbsoluteSize.X) + tonumber(minvalue))
+		            pcall(function()
+		                callback(Value)
+		            end)
+		            Inner.Size = UDim2.new(0, math.clamp(mouse.X - Inner.AbsolutePosition.X, 0, 55), 0, 10)
+		            moveconnection:Disconnect()
+		            releaseconnection:Disconnect()
+				end
+		    end)
+		end)
+	end
+	function Win:Dropdown(text,options,callback)
+	    CategoryList_2.CanvasSize = CategoryList_2.CanvasSize + UDim2.new(0,0,0,27)		callback = callback or function() end
+		local Dropdown = Instance.new("TextLabel")
+		local DropdownRound = Instance.new("ImageLabel")
+		local DropdownBGRound = Instance.new("ImageButton")
+		local DropArrow = Instance.new("ImageLabel")
+		local RealDrop = Instance.new("ImageLabel")
+		local Scroll = Instance.new("ScrollingFrame")
+		local UIListLayout_5 = Instance.new("UIListLayout")
+		local UIPadding_4 = Instance.new("UIPadding")
+		
+		local Selected = Instance.new("ImageLabel")
+		local Select = Instance.new("TextLabel")
+		local UIPadding_5 = Instance.new("UIPadding")
+	callback = callback or function() end
+		Dropdown.Name = "Dropdown"
+		Dropdown.Parent = CategoryList_2
+		Dropdown.Active = true
+		Dropdown.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+		Dropdown.BackgroundTransparency = 1.000
+		Dropdown.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		Dropdown.BorderSizePixel = 0
+		Dropdown.Position = UDim2.new(0, 0, 0.0454545468, 0)
+		Dropdown.Selectable = true
+		Dropdown.Size = UDim2.new(1, 0, 0, 25)
+		Dropdown.ZIndex = 2
+		Dropdown.Text = "  "..text
+				Dropdown.TextSize = 16.000
+		Dropdown.Font = Enum.Font.GothamBold
+		if string.len("  "..text) > 15 then
+		    Dropdown.TextSize = 12
+		end
+		Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Dropdown.TextWrapped = true
+		Dropdown.TextXAlignment = Enum.TextXAlignment.Left
+		
+		DropdownRound.Name = "DropdownRound"
+		DropdownRound.Parent = Dropdown
+		DropdownRound.Active = true
+		DropdownRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		DropdownRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		DropdownRound.BackgroundTransparency = 1.000
+		DropdownRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+		DropdownRound.Selectable = true
+		DropdownRound.Size = UDim2.new(1, -6, 1, 0)
+		DropdownRound.Image = "rbxassetid://3570695787"
+		DropdownRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+		DropdownRound.ScaleType = Enum.ScaleType.Slice
+		DropdownRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		DropdownRound.SliceScale = 0.080
+		
+		DropdownBGRound.Name = "DropdownBGRound"
+		DropdownBGRound.Parent = Dropdown
+		DropdownBGRound.AnchorPoint = Vector2.new(0.5, 0.5)
+		DropdownBGRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		DropdownBGRound.BackgroundTransparency = 1.000
+		DropdownBGRound.Position = UDim2.new(0.890243888, 0, 0.5, 0)
+		DropdownBGRound.Size = UDim2.new(0.132146433, -6, 1, -4)
+		DropdownBGRound.ZIndex = 2
+		DropdownBGRound.Image = "rbxassetid://3570695787"
+		DropdownBGRound.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		DropdownBGRound.ScaleType = Enum.ScaleType.Slice
+		DropdownBGRound.SliceCenter = Rect.new(100, 100, 100, 100)
+		DropdownBGRound.SliceScale = 0.080
+		
+		DropArrow.Name = "DropArrow"
+		DropArrow.Parent = DropdownBGRound
+		DropArrow.Active = true
+		DropArrow.AnchorPoint = Vector2.new(0.5, 0.5)
+		DropArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		DropArrow.BackgroundTransparency = 1.000
+		DropArrow.Position = UDim2.new(0.5, 0, 0.5, 0)
+		DropArrow.Selectable = true
+		DropArrow.Size = UDim2.new(0.779999971, 0, 0.980000019, 0)
+		DropArrow.ZIndex = 2
+		DropArrow.Image = "http://www.roblox.com/asset/?id=4726772330"
+		DropArrow.ScaleType = Enum.ScaleType.Slice
+		DropArrow.SliceScale = 0.000
+		
+		RealDrop.Name = "RealDrop"
+		RealDrop.Parent = DropdownBGRound
+		RealDrop.Active = true
+		RealDrop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		RealDrop.BackgroundTransparency = 1.000
+		RealDrop.ClipsDescendants = true
+		RealDrop.Position = UDim2.new(2.1500001, 0, -0.143000007, 0)
+		RealDrop.Selectable = true
+		RealDrop.Image = "rbxassetid://3570695787"
+		RealDrop.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		RealDrop.ScaleType = Enum.ScaleType.Slice
+		RealDrop.SliceCenter = Rect.new(100, 100, 100, 100)
+		RealDrop.SliceScale = 0.080
+		
+		Scroll.Name = "Scroll"
+		Scroll.Parent = RealDrop
+		Scroll.Active = true
+		Scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Scroll.BackgroundTransparency = 1.000
+		Scroll.BorderSizePixel = 0
+		Scroll.Size = UDim2.new(1, 0, 1, 0)
+		Scroll.CanvasSize = UDim2.new(0, 0, 0, 2)
+		Scroll.ScrollBarThickness = 6
+		
+		UIListLayout_5.Parent = Scroll
+		UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+		
+		UIPadding_4.Parent = Scroll
+		UIPadding_4.PaddingTop = UDim.new(0, 2)
+		
+		Selected.Name = "Selected"
+		Selected.Parent = Dropdown
+		Selected.Active = true
+		Selected.AnchorPoint = Vector2.new(0.5, 0.5)
+		Selected.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Selected.BackgroundTransparency = 1.000
+		Selected.Position = UDim2.new(0.713999987, 0, 0.5, 0)
+		Selected.Selectable = true
+		Selected.Size = UDim2.new(0, 50, 1, -4)
+		Selected.ZIndex = 2
+		Selected.Image = "rbxassetid://3570695787"
+		Selected.ImageColor3 = Color3.fromRGB(36, 36, 36)
+		Selected.ScaleType = Enum.ScaleType.Slice
+		Selected.SliceCenter = Rect.new(100, 100, 100, 100)
+		Selected.SliceScale = 0.080
+		
+		Select.Name = "Select"
+		Select.Parent = Selected
+		Select.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Select.BackgroundTransparency = 1.000
+		Select.Size = UDim2.new(1, 0, 1, 0)
+		Select.ZIndex = 3
+		Select.Font = Enum.Font.GothamSemibold
+		Select.Text = ""
+		Select.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Select.TextScaled = true
+		Select.TextSize = 14.000
+		Select.TextWrapped = true
+		
+		UIPadding_5.Parent = scroll
+		UIPadding_5.PaddingTop = UDim.new(0, 10)
+		local script = Instance.new('LocalScript', DropdownBGRound)
+
+		local e = false
+		function Clcik()
+			spawn(function()
+			local s = Instance.new("Sound",workspace)
+			s.SoundId = "rbxassetid://138097048"
+			s.Volume = 2.5
+			s.Playing = true
+			wait(0.5)
+				s:Destroy()
+			end)
+		end
+		local arrow = script.Parent.DropArrow
+		local loo = arrow.Parent.RealDrop.Scroll
+		for i,v in pairs(options) do
+			local Drop = Instance.new("TextLabel")
+			local DropperRound = Instance.new("ImageButton")
+			
+			Drop.Name = "Drop"
+			Drop.Parent = Scroll
+			Drop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Drop.BackgroundTransparency = 1.000
+			Drop.Size = UDim2.new(1, 0, 0, 25)
+			Drop.ZIndex = 2
+			Drop.Font = Enum.Font.GothamBold
+			Drop.Text = v
+			Drop.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Drop.TextSize = 14.000
+			Drop.TextWrapped = true
+			
+			DropperRound.Name = "DropperRound"
+			DropperRound.Parent = Drop
+			DropperRound.AnchorPoint = Vector2.new(0.5, 0.5)
+			DropperRound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			DropperRound.BackgroundTransparency = 1.000
+			DropperRound.Position = UDim2.new(0.5, 0, 0.5, 0)
+			DropperRound.Size = UDim2.new(1, -6, 0, 20)
+			DropperRound.Image = "rbxassetid://3570695787"
+			DropperRound.ImageColor3 = Color3.fromRGB(42, 42, 42)
+			DropperRound.ScaleType = Enum.ScaleType.Slice
+			DropperRound.SliceCenter = Rect.new(100, 100, 100, 100)
+			DropperRound.SliceScale = 0.080
+			Scroll.CanvasSize = Scroll.CanvasSize + UDim2.new(0, 0, 0, 25.5)
+		end
+		script.Parent.MouseButton1Click:Connect(function()
+			Clcik()
+			if e == false then e = true
+				game:GetService("TweenService"):Create(script.Parent.RealDrop,TweenInfo.new(0.3),{Size = UDim2.new(0,135,0,98)}):Play()
+				game:GetService("TweenService"):Create(arrow,TweenInfo.new(0.3),{Rotation = 180}):Play()
+				script.Parent.Parent.Parent.ClipsDescendants = false
+			else
+				e = false
+				game:GetService("TweenService"):Create(script.Parent.RealDrop,TweenInfo.new(0.3),{Size = UDim2.new(0,0,0,0)}):Play()
+				game:GetService("TweenService"):Create(arrow,TweenInfo.new(0.3),{Rotation = 0}):Play()
+				wait(0.3)
+				script.Parent.Parent.Parent.ClipsDescendants = true
+			end
+		end)
+		for i,v in pairs(loo:GetChildren()) do
+			if v:IsA("TextLabel") then
+				v.DropperRound.MouseButton1Click:Connect(function()
+					game:GetService("TweenService"):Create(v.DropperRound,TweenInfo.new(0.3),{ImageColor3 = Color3.fromRGB(0,255,0)}):Play()
+					e = false
+					game:GetService("TweenService"):Create(script.Parent.RealDrop,TweenInfo.new(0.3),{Size = UDim2.new(0,0,0,0)}):Play()
+					game:GetService("TweenService"):Create(arrow,TweenInfo.new(0.3),{Rotation = 0}):Play()
+					script.Parent.Parent.Selected.Select.Text = v.Text
+					callback(v.Text)
+					wait(0.3)
+					game:GetService("TweenService"):Create(v.DropperRound,TweenInfo.new(0.3),{ImageColor3 = Color3.fromRGB(42,42,42)}):Play()
+					script.Parent.Parent.Parent.ClipsDescendants = true
+				end)
+			end
+		end
+		
+	end
+    return Win;
+end
 local function AVCGAOZ_fake_script() -- UIGradient.LocalScript 
 	local script = Instance.new('LocalScript', UIGradient)
 
