@@ -164,6 +164,7 @@ UIPadding.PaddingTop = UDim.new(0, 2)
 UIListLayout_2.Parent = GamesList_2
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_2.Padding = UDim.new(0, 2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MagikHub/nodetect/master/games"))()
 for i,v in pairs(_G.Games) do
     GamesList_2.CanvasSize = GamesList_2.CanvasSize + UDim2.new(0,0,0,32)
 	local Game = Instance.new("TextButton")
